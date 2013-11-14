@@ -5,12 +5,58 @@
 </head>
 <body>
 
+	<table>
+   	<tbody>
+      <tr>
+        <td><input type="text" id="a1"></td>
+        <td><input type="text" id="a2"></td>
+        <td><input type="text" id="a3"></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="b1"></td>
+        <td><input type="text" id="b2"></td>
+        <td><input type="text" id="b3"></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="c1"></td>
+        <td><input type="text" id="c2"></td>
+        <td><input type="text" id="c3"></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="d1"></td>
+        <td><input type="text" id="d2"></td>
+        <td><input type="text" id="d3"></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="e1"></td>
+        <td><input type="text" id="e2"></td>
+        <td><input type="text" id="e3"></td>
+      </tr>
+  	</tbody>
+  </table>
+
+
 
 	<script src="jquery.js"></script>
 	<script src="reactive.js"></script>
 	<script>
 
 		window.rx = new Reactive();
+
+		$(document).ready(function() {
+
+			$('input').on('change', function(e) { rx.set(this.id, this.value) })
+
+			rx.watch('a1', function() { 
+				document.getElementById('e3').value = parseInt(rx.getValue('a1'), 10) + parseInt(rx.getValue('b1'), 10);
+			})
+
+			rx.watch('b1', function() { 
+				document.getElementById('e3').value = parseInt(rx.getValue('a1'), 10) + parseInt(rx.getValue('b1'), 10);
+			})
+
+		});
+
 
 	</script>
 </body>
