@@ -1,7 +1,6 @@
 ### REACTIVE.js ###
 
-This is my take on making a reactive library for JavaScript.  It allows you to `watch` a varible and then trigger a callback whenever it changes.
-
+This is my take on making a reactive library for JavaScript.  It allows you to `watch` a varible and then trigger a callback whenever it changes.  You can see the demo http://jsfiddle.net/mcotton/FSWS4/
 
 #### API ####
 
